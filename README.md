@@ -24,6 +24,13 @@
 ```javascript
 import RNSFAuthenticationSession from 'react-native-sf-authentication-session';
 
-// TODO: What to do with the module?
-RNSFAuthenticationSession;
+...
+// The url you want to open with safari
+const url = "http://my.webapp.com"
+// The url your server will redirect you to
+// hint - use a custom schema or universal link to immediatly get back to your app
+const callbackUrl = "myapp://"
+// The redirected url with query params containing private data
+// ex - "myapp://token=mysecrettoken"
+const finalUrl = await RNSFAuthenticationSession.getSafariData();
 ```
